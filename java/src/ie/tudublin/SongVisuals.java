@@ -1,5 +1,4 @@
 package ie.tudublin;
-import ddf.minim.analysis.BeatDetect;
 
 /*
 To create a visual to add to the song:
@@ -21,7 +20,7 @@ public class SongVisuals extends Visual
     Mountains mt;
     SineWave sw;
     Timer timer;
-    BeatDetect beat;
+    Ripple ri;
 
 
     public void settings()
@@ -48,9 +47,7 @@ public class SongVisuals extends Visual
         wi = new WaveIntro(this);
         mt = new Mountains(this);
         sw = new SineWave(this);
-        beat = new BeatDetect();
-
-        beat.setSensitivity(500);
+        ri = new Ripple(this);
         
     }
 
@@ -90,6 +87,7 @@ public class SongVisuals extends Visual
         mt.render();
         sw.render();
         */
+        //ri.render();
 
         // 6 refers to the number of seconds
         if(timer.running && timer.seconds() < 6){

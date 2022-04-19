@@ -27,7 +27,6 @@ public class Mountains
 
     public void render(){
         sv.colorMode(PApplet.HSB);
-        sv.background(0);
         sv.calculateAverageAmplitude();
         scroll -= 0.2f * sv.getSmoothedAmplitude();
         float offsety = scroll;
