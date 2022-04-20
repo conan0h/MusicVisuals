@@ -21,21 +21,25 @@ public class SongVisuals extends Visual
     SineWave sw;
     Timer timer;
     Ripple ri;
+    Finale fi;
 
 
     public void settings()
     {
-        size(1024, 500, P3D);
+        fullScreen(P3D);
+        //size(1024, 500, P3D);
         
         
         // Use this to make fullscreen
-        //fullScreen();
+        
     }
 
     public void setup()
     {
+        surface.setLocation(50, 50);
         startMinim();
         loadAudio("Kids.mp3");
+        strokeWeight(2);
 
         // Controls when visuals appear and disappear according to the time
         timer = new Timer(this);
@@ -48,6 +52,8 @@ public class SongVisuals extends Visual
         mt = new Mountains(this);
         sw = new SineWave(this);
         ri = new Ripple(this);
+        fi = new Finale(this);
+
         
     }
 
@@ -88,8 +94,11 @@ public class SongVisuals extends Visual
         sw.render();
         */
         //ri.render();
-
+        fi.render();
+        //sw.render();
         // 6 refers to the number of seconds
+    
+        /*
         if(timer.running && timer.seconds() < 6){
             wi.render();
         }
@@ -101,20 +110,26 @@ public class SongVisuals extends Visual
 
         if (timer.running && timer.seconds() >= 6 && timer.seconds() <= 13){
             sw.render();
-            tc1.render();
+            //tc1.render();
         }
 
         if (timer.running && timer.seconds() > 13 && timer.seconds() + 0.5f < 21){
             
             li.render();
             wf.render();
-            tc2.render();
+            //tc2.render();
         }
 
         if (timer.running && timer.seconds() + 0.5f > 22 && timer.seconds() <= 53){
             mt.render();
             
         }
+        */
+        
+
+        
+
+
     }
     
 }

@@ -31,7 +31,7 @@ public class SineWave {
             );
             float feh = lerpedBuffer[i] * (y / 2) * 4.0f;
             // Horizontal
-            sv.ellipse(i*diameter, 3*(feh)*PApplet.sin(frequency*(feh))+y, diameter, diameter);
+            sv.ellipse(i+i*diameter, 3*(feh)*PApplet.sin(frequency*(feh))+y, diameter, diameter);
             //mv.ellipse((feh)*PApplet.sin(frequency*(feh))+y, i*diameter, diameter, diameter);
             
             // Vertical
