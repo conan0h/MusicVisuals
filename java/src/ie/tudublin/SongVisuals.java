@@ -22,6 +22,12 @@ public class SongVisuals extends Visual
     Timer timer;
     Ripple ri;
     Finale fi;
+    Star[] stars = new Star[400];
+    StarFinale[] sf = new StarFinale[400];
+    Piano pn;
+
+    //int[][] colors = new int[7][3];
+    int k = 0;
 
 
     public void settings()
@@ -53,6 +59,27 @@ public class SongVisuals extends Visual
         sw = new SineWave(this);
         ri = new Ripple(this);
         fi = new Finale(this);
+        pn = new Piano(this);
+        
+        for (int i = 0; i < stars.length; i++)
+        {
+            stars[i] = new Star(this, k);
+            k++;
+            if (k > 6){
+                k = 0;
+            }
+            
+        }
+        k = 0;
+        for (int i = 0; i < sf.length; i++)
+        {
+            sf[i] = new StarFinale(this, k);
+            k++;
+            if (k > 6){
+                k = 0;
+            }
+            
+        }
 
         
     }
@@ -94,11 +121,22 @@ public class SongVisuals extends Visual
         sw.render();
         */
         //ri.render();
-        fi.render();
+        //fi.render();
         //sw.render();
+        //translate(0.5f*width, 0.5f*height);
+        /*
+        for (int i = 0; i < stars.length; i++){
+            stars[i].render();
+        }
+        */
+        /*
+        for (int i = 0; i < sf.length; i++){
+            sf[i].render();
+        }
+        */
         // 6 refers to the number of seconds
     
-        /*
+        
         if(timer.running && timer.seconds() < 6){
             wi.render();
         }
@@ -117,14 +155,16 @@ public class SongVisuals extends Visual
             
             li.render();
             wf.render();
-            //tc2.render();
+            pn.render();
+            tc2.render();
         }
 
         if (timer.running && timer.seconds() + 0.5f > 22 && timer.seconds() <= 53){
             mt.render();
             
         }
-        */
+        
+        
         
 
         
