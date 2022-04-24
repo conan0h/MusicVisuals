@@ -19,6 +19,7 @@ public class SongVisuals extends Visual
     TitleCard2 tc2;
     WaveIntro wi;
     Mountains mt;
+    Sun su;
     SineWave sw;
     Timer timer;
     BeatDetect beat;
@@ -30,7 +31,7 @@ public class SongVisuals extends Visual
         
         
         // Use this to make fullscreen
-        //fullScreen();
+        //fullScreen(P3D);
     }
 
     public void setup()
@@ -48,8 +49,9 @@ public class SongVisuals extends Visual
         wi = new WaveIntro(this);
         mt = new Mountains(this);
         sw = new SineWave(this);
+        su = new Sun(this);
         beat = new BeatDetect();
-
+        
         beat.setSensitivity(500);
         
     }
@@ -92,6 +94,7 @@ public class SongVisuals extends Visual
         */
 
         // 6 refers to the number of seconds
+        
         if(timer.running && timer.seconds() < 6){
             wi.render();
         }
@@ -115,7 +118,10 @@ public class SongVisuals extends Visual
 
         if (timer.running && timer.seconds() + 0.5f > 22 && timer.seconds() <= 53){
             mt.render();
-            
+        }
+        
+        if(timer.running && timer.seconds() > 53.5 && timer.seconds() < 130){
+            su.render();
         }
     }
     
