@@ -123,6 +123,6 @@ public class SongVisuals extends Visual
         if(timer.running && timer.seconds() > 53.5 && timer.seconds() < 130){
             su.render();
         }
-    }
+    } 
     
 }
