@@ -25,6 +25,7 @@ public class SongVisuals extends Visual
     Star[] stars = new Star[400];
     StarFinale[] sf = new StarFinale[400];
     Piano pn;
+    StartScreen ss;
 
     //int[][] colors = new int[7][3];
     int k = 0;
@@ -60,6 +61,7 @@ public class SongVisuals extends Visual
         ri = new Ripple(this);
         fi = new Finale(this);
         pn = new Piano(this);
+        ss = new StartScreen(this);
         
         for (int i = 0; i < stars.length; i++)
         {
@@ -124,17 +126,28 @@ public class SongVisuals extends Visual
         //fi.render();
         //sw.render();
         //translate(0.5f*width, 0.5f*height);
+        //ss.render();
         /*
         for (int i = 0; i < stars.length; i++){
             stars[i].render();
         }
         */
+        
+        
         /*
         for (int i = 0; i < sf.length; i++){
             sf[i].render();
         }
         */
         // 6 refers to the number of seconds
+        if (!timer.running){
+            
+            ss.render();
+            translate(0.5f*width, 0.5f*height);
+            for (int i = 0; i < stars.length; i++){
+                stars[i].render();
+            }
+        }
     
         
         if(timer.running && timer.seconds() < 6){
@@ -163,6 +176,7 @@ public class SongVisuals extends Visual
             mt.render();
             
         }
+        
         
         
         
