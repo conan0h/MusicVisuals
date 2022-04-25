@@ -20,6 +20,7 @@ public class StartScreen
     }
 
     public void render(){
+        sv.fill(255);
         sv.textAlign(PConstants.CENTER, PConstants.CENTER);
         sv.text("PRESS SPACEBAR TO START", x/2, y/2);
         

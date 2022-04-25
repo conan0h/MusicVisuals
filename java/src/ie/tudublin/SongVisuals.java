@@ -1,5 +1,7 @@
 package ie.tudublin;
 
+import processing.core.PFont;
+
 /*
 To create a visual to add to the song:
 Create a separate class
@@ -10,7 +12,7 @@ Call the render function in the draw funciton
 
 */
 public class SongVisuals extends Visual 
-{
+{    
     // Intro
     AMWaveForm wf;
     LineIntro li;

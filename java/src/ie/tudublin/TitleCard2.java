@@ -12,8 +12,6 @@ public class TitleCard2 {
         this.sv = sv;
         x = this.sv.width;
         y = this.sv.height;
-        f = sv.createFont("font.otf", 24);
-        sv.textFont(f);
     }
     public void render(){
         sv.textSize(48);
