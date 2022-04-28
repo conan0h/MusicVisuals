@@ -1,36 +1,39 @@
 package ie.tudublin;
 
 import processing.core.PApplet;
-
+//to comment
 public class Sun {
     SongVisuals sv;
     float x;
     float y;
+
     double rotate = 0;
     double hy = 0;
     double ad;
-    double endX;
     double op; 
+
     double endY;
+    double endX;
+
     float fendX;
     float fendY;
     boolean sizeCheck;
-    float[][] land;
-    int counter = 0;
-    int midFlag = 0;
+
     double tempW;
     double tempH;
     double tempHy;
-    double fade = 0;
 
     float leftH;
     float leftW; 
-
     float rightH;
     float rightW; 
-
     float midH;
     float midW; 
+
+    float startX;
+    float startY;
+
+    float corner;
    
     public Sun(SongVisuals sv){
         this.sv = sv; 
@@ -68,7 +71,8 @@ public class Sun {
 
         if(sv.timer.seconds() > 89){
             if (sizeCheck == true){
-                hy = hy +.000006*x;
+                hy = hy + .000006*x;
+                
                 if (hy>x/8){
                         sizeCheck=false;
                 }
@@ -79,7 +83,6 @@ public class Sun {
                     sizeCheck=true;
                 }
             }
-            midFlag = 1;
         }
         else if (sv.timer.seconds() > 78 && sv.timer.seconds() < 89){
             if (hy>=0){
@@ -92,15 +95,98 @@ public class Sun {
             }
         }
 
-        if(sv.timer.seconds() < 89 & hy > .00003*x ){
-            ad = Math.cos(Math.toRadians(0 + stagger*12 + rotate))*hy;
-            op = Math.sin(Math.toRadians(0 + stagger*12 + rotate))*hy;
-            endX = ad + midW;
-            endY = op + midH;
-            fendX = (float) endX;
-            fendY = (float) endY;
+        corner = (float) hy;
 
-            sv.line(midW, midH, fendX, fendY);
+        if(sv.timer.seconds() < 89 & hy > .00003*x ){
+            
+            //float distance = sv.dist(midW, midH, fendX, fendY)/2;
+            
+            fendX = midW;
+            fendY = midH;
+            
+            //sv.arc(midW, midH-corner/20, 180, 0, sv.HALF_PI, sv.PI);
+            //sv.arc(midW, midH+corner/20, corner/15, corner/15, sv.QUARTER_PI, sv.PI-sv.QUARTER_PI);
+            sv.circle(midW, midH+corner/18, corner/5*(amp));
+            sv.line(midW+corner/30, midH-corner/12, midW+corner/30, midH-corner/50);
+            sv.line(midW-corner/30, midH-corner/12, midW-corner/30, midH-corner/50);
+
+            for(int i = 0; i < 8; i++)
+            {
+                if (i%2==0)
+                {
+                    ad = Math.cos(Math.toRadians(stagger*12 + rotate - 15))*hy/i;
+                    op = Math.sin(Math.toRadians(stagger*12 + rotate - 15))*hy/i;
+                    startX = fendX;
+                    startY = fendY;
+                    endX = ad + midW;
+                    endY = op + midH;
+                    fendX = (float) endX;
+                    fendY = (float) endY;
+                    sv.line(startX, startY, fendX, fendY);
+                }
+                else
+                {
+                    ad = Math.cos(Math.toRadians(stagger*12 + rotate + 15))*hy/i;
+                    op = Math.sin(Math.toRadians(stagger*12 + rotate + 15))*hy/i;
+                    startX = fendX;
+                    startY = fendY;
+                    endX = ad + midW;
+                    endY = op + midH;
+                    fendX = (float) endX;
+                    fendY = (float) endY;
+                    sv.line(startX, startY, fendX, fendY);
+                }
+            }
+
+            
+            if(sv.timer.seconds() < 89 & hy > .00003*x ){
+                ad = Math.cos(Math.toRadians(0 + stagger*12 + rotate))*hy;
+                op = Math.sin(Math.toRadians(0 + stagger*12 + rotate))*hy;
+                
+                sv.noFill();
+
+                for(int i = 0; i<8; i++){
+                    float circleCenter = (float) (hy*2)/i;
+                    sv.circle(midW, midH, circleCenter);
+                }
+                
+                
+
+                endX = ad + midW;
+                endY = op + midH;
+                fendX = (float) endX;
+                fendY = (float) endY;
+                
+                float distance = sv.dist(midW, midH, fendX, fendY)/2;
+    
+                for(int i = 0; i < 4; i++)
+                {
+                    if(i == 0 || i == 2)
+                    {
+                        startX = fendX;
+                        startY = fendY;
+                        endX = ad + endX + distance;
+                        //endY = op + endY + distance;
+                        fendX = (float) endX;
+                        fendY = (float) endY;
+                        sv.line(startX , startY, fendX, fendY);
+                    }
+                    else{
+                        startX = fendX;
+                        startY = fendY ;
+                        endX = ad + endX - distance;
+                        //endY = op + endY - distance;
+                        fendX = (float) endX;
+                        fendY = (float) endY;
+                        sv.line(startX, startY, fendX, fendY);
+                    }
+                }
+                
+    
+                //sv.line(midW, midH, fendX, fendY);
+            }
+            
+
         }
         else if (sv.timer.seconds() > 88){
             ad = Math.cos(Math.toRadians(0 + stagger*12 + rotate))*hy;
@@ -122,8 +208,12 @@ public class Sun {
         }
 
         if(sv.timer.seconds() > 89){
+
+            sv.noFill();
+            sv.circle(leftW, leftH, corner*2);
+            sv.circle(rightW, rightH, corner*2);
             sv.fill(400*(amp/2), 400, 400);
-            sv.rect(0, leftH+(y/3), x, sv.getSmoothedAmplitude()*250);
+            sv.rect(0, leftH+(y/3), x, sv.getSmoothedAmplitude()*x/3);
         }
         
 }

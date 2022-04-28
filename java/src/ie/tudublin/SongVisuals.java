@@ -27,11 +27,11 @@ public class SongVisuals extends Visual
 
     public void settings()
     {
-        size(1024, 500, P3D);
+        //size(1024, 500, P3D);
         
         
         // Use this to make fullscreen
-        //fullScreen(P3D);
+        fullScreen(P3D);
     }
 
     public void setup()
@@ -120,7 +120,7 @@ public class SongVisuals extends Visual
             mt.render();
         }
         
-        if(timer.running && timer.seconds() > 53.5 && timer.seconds() < 130){
+        if(timer.running && timer.seconds() > 53 && timer.seconds() < 130){
             su.render();
         }
     } 
