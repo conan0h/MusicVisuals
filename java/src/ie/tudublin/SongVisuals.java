@@ -28,6 +28,7 @@ public class SongVisuals extends Visual
     StarFinale[] sf = new StarFinale[400];
     Piano pn;
     StartScreen ss;
+    Intro in;
 
     //int[][] colors = new int[7][3];
     int k = 0;
@@ -64,6 +65,7 @@ public class SongVisuals extends Visual
         fi = new Finale(this);
         pn = new Piano(this);
         ss = new StartScreen(this);
+        in = new Intro(this);
         
         for (int i = 0; i < stars.length; i++)
         {
@@ -167,11 +169,14 @@ public class SongVisuals extends Visual
         }
 
         if (timer.running && timer.seconds() > 13 && timer.seconds() + 0.5f < 21){
-            
+            /*
             li.render();
             wf.render();
             pn.render();
             tc2.render();
+            */
+            // combines the above 4
+            in.render();
         }
 
         if (timer.running && timer.seconds() + 0.5f > 22 && timer.seconds() <= 53){
