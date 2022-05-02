@@ -34,8 +34,8 @@ public class AMWaveForm
                 255
             );
             float feh = lerpedBuffer[i] * cy * 4.0f;
-            sv.line(cy* 3.5f, i, 3.5f*(cy) + (cy*(0.005f*feh)), i );
-            sv.line(cy* 0.5f, i, 0.5f*(cy) + (cy *(0.005f*feh)), i );
+            sv.line(cy+cy+cy, i+i, (cy+cy+cy) + (cy*(0.001f*feh)), i+i );
+            sv.line(cy/2, i+i, (cy/2) + (cy *(0.001f*feh)), i+i );
         }
         
     }
