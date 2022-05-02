@@ -73,6 +73,8 @@ public class Intro {
 
         //Title
         sv.textSize(48);
+        sv.colorMode(PConstants.RGB);
+        sv.fill(255, 0, 0);
         sv.textAlign(PConstants.CENTER, PConstants.CENTER);
         sv.text("KIDS", x/2, y/2);
 

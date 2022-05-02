@@ -82,10 +82,19 @@ public class Star {
     {
         starz -= 10;
         if (starz <= 0.0){
+            if (sv.timer.seconds() <= 289 )
+            {
+                starz = 2000;
+                starx = sv.random(-5000, 5000);
+                stary = sv.random(-5000, 5000);
+            }
+            else
+            {
+                starx = sv.random(-sv.width, sv.width);
+                stary = sv.random(-sv.height, sv.height);
+            }
             
-            starx = sv.random(-5000, 5000);
-            stary = sv.random(-5000, 5000);
-            starz = 2000;
+            
             
         }
         

@@ -7,7 +7,7 @@ public class Finale {
     SongVisuals sv;
     float x;
     float y;
-    float dia = 400;
+    float dia = 50;
     float angle;
     float i = 0;
     float sW_max;
@@ -31,7 +31,7 @@ public class Finale {
         sv.stroke(255);
         sv.calculateAverageAmplitude();
 
-        dia = PApplet.lerp(dia, i, -0.001f);
+        dia = PApplet.lerp(dia, i, -0.0035f);
 
         sv.translate(x/2, y/2);
         sv.rotate(-angle);
@@ -47,7 +47,7 @@ public class Finale {
                 float sW = PApplet.map(PApplet.cos(PApplet.radians(r)), -1,1,sW_max,1);
                 sv.strokeWeight(sW);
                 sv.line(PApplet.sin(PApplet.radians(r))*dia,
-                PApplet.cos(PApplet.radians(r))*dia * sv.getSmoothedAmplitude(), PApplet.sin(PApplet.radians(-r))*dia, PApplet.cos(PApplet.radians(-r))*dia * sv.getSmoothedAmplitude());
+                PApplet.cos(PApplet.radians(r))*dia * sv.getSmoothedAmplitude(), PApplet.sin(PApplet.radians(-r))*dia, PApplet.cos(PApplet.radians(-r))*dia * (sv.getSmoothedAmplitude()));
                 
             }
             sv.popMatrix();
@@ -62,6 +62,7 @@ public class Finale {
         sv.stroke(255);
         sv.ellipse(0, 0, dia*2, dia*2);
 
+        
         if (!reverse){
             i++;
         }
@@ -69,7 +70,7 @@ public class Finale {
             i--;
         }
         
-        if (i > 20){
+        if (i > 10){
             i += 5;
             reverse = true;
         }

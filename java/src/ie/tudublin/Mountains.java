@@ -28,7 +28,15 @@ public class Mountains
     public void render(){
         sv.colorMode(PApplet.HSB);
         sv.calculateAverageAmplitude();
-        scroll -= 0.2f * sv.getSmoothedAmplitude();
+        if (sv.timer.seconds() <= 279)
+        {
+            scroll -= 0.2f * sv.getSmoothedAmplitude();
+        }
+        else
+        {
+            scroll += 0.4f * sv.getSmoothedAmplitude();
+        }
+        
         float offsety = scroll;
         for (int y = 0; y < rows; y++){
             float offsetx = 0;
@@ -49,7 +57,7 @@ public class Mountains
                 sv.beginShape(PApplet.TRIANGLE_STRIP);
                 for (int x = 0; x < cols; x++){
                     sv.stroke(PApplet.map(y, 0, rows, 0, 255), 255, 255);
-                    sv.vertex(x*scl, y*scl, land[x][y] * sv.getAmplitude()*3); // z value determines warpingk
+                    sv.vertex(x*scl, y*scl, land[x][y] * sv.getAmplitude()*3); // z value determines warping
                     sv.vertex(x*scl, (y+1)*scl, land[x][y] * sv.getAmplitude()*3);
                 }
                 sv.endShape();

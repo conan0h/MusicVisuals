@@ -1,6 +1,5 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PFont;
 

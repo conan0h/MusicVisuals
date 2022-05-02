@@ -44,7 +44,14 @@ public class Sun {
     public void render(){
         sv.stroke(255);
         sv.calculateAverageAmplitude();
-        sv.colorMode(PApplet.HSB, 360, 360, 360);
+        if (sv.timer.seconds() <= 263){
+            sv.colorMode(PApplet.HSB, 360, 360, 360);
+        }
+        else
+        {
+            sv.colorMode(PApplet.RGB);
+        }
+        
 
         for (int a = 0; a < 30; a++){
             spin(a);
@@ -97,7 +104,7 @@ public class Sun {
 
         corner = (float) hy;
 
-        if(sv.timer.seconds() < 89 & hy > .00003*x ){
+        if(sv.timer.seconds() < 89 & hy > .00003*x){
             
             //float distance = sv.dist(midW, midH, fendX, fendY)/2;
             
@@ -157,7 +164,7 @@ public class Sun {
                 fendX = (float) endX;
                 fendY = (float) endY;
                 
-                float distance = sv.dist(midW, midH, fendX, fendY)/2;
+                float distance = PApplet.dist(midW, midH, fendX, fendY)/2;
     
                 for(int i = 0; i < 4; i++)
                 {

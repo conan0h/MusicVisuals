@@ -2,18 +2,13 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-/*
-A waveform spanning vertically across the screen
-*/
-
-public class AMWaveForm 
-{
+public class BoxForm{
     SongVisuals sv;
     float cy = 0;
     float f = 0;
-    float[] lerpedBuffer; // replace with getSmoothedAudio() later
+    float[] lerpedBuffer;
 
-    public AMWaveForm(SongVisuals sv)
+    public BoxForm(SongVisuals sv)
     {
         this.sv = sv;
         cy = this.sv.height / 2;
@@ -34,8 +29,9 @@ public class AMWaveForm
                 255
             );
             float feh = lerpedBuffer[i] * cy * 4.0f;
-            sv.line(cy+cy+cy, i+i, (cy+cy+cy) + (cy*(0.001f*feh)), i+i );
-            sv.line(cy/2, i+i, (cy/2) + (cy *(0.001f*feh)), i+i );
+            sv.strokeWeight(2);
+            sv.line(i+i+i, 0, i+i+i, (0) + (cy *(0.001f*feh))  );
+            sv.line(i+i+i, cy + cy, i+i+i, (cy+cy) + (cy *(0.001f*feh))  );
         }
         
     }
