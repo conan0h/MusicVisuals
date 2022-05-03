@@ -29,9 +29,8 @@ public class BoxForm{
                 255
             );
             float feh = lerpedBuffer[i] * cy * 4.0f;
-            sv.strokeWeight(2);
-            sv.line(i+i+i, 0, i+i+i, (0) + (cy *(0.001f*feh))  );
-            sv.line(i+i+i, cy + cy, i+i+i, (cy+cy) + (cy *(0.001f*feh))  );
+            sv.line(PApplet.map(i, 0, sv.getAudioBuffer().size(), 0, sv.width), 0, PApplet.map(i, 0, sv.getAudioBuffer().size(), 0, sv.width), (0) + (cy *(0.001f*feh))  );
+            sv.line(PApplet.map(i, 0, sv.getAudioBuffer().size(), 0, sv.width), cy + cy, PApplet.map(i, 0, sv.getAudioBuffer().size(), 0, sv.width), (cy+cy) + (cy *(0.001f*feh))  );
         }
         
     }

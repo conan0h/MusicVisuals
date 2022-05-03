@@ -16,10 +16,9 @@ public class WaveIntro {
 
     public void render(){
         sv.colorMode(PApplet.HSB);
-        sv.strokeWeight(2);
         for (int i = 0; i < sv.getAudioBuffer().size(); i++){
             sv.stroke(255, sv.getAudioBuffer().get(i)*700);
-            sv.line((i+i+i), y + sv.getAudioBuffer().get(i)*300, (i+i+i), y - sv.getAudioBuffer().get(i)*300);
+            sv.line((PApplet.map(i, 0, sv.getAudioBuffer().size(), 0, sv.width)), y + sv.getAudioBuffer().get(i)*300, PApplet.map(i, 0, sv.getAudioBuffer().size(), 0, sv.width), y - sv.getAudioBuffer().get(i)*300);
         }
     }
 }

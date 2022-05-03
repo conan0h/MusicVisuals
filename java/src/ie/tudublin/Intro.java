@@ -67,8 +67,8 @@ public class Intro {
                 255
             );
             float feh = lerpedBuffer[i] * cy * 4.0f;
-            sv.line(cy+cy+cy, i+i, (cy+cy+cy) + (cy*(0.001f*feh)), i+i );
-            sv.line(cy/2, i+i, (cy/2) + (cy *(0.001f*feh)), i+i );
+            sv.line(cy+cy+cy,PApplet.map(i, 0, sv.getAudioBuffer().size(), 0, sv.height), (cy+cy+cy) + (cy*(0.001f*feh)), PApplet.map(i, 0, sv.getAudioBuffer().size(), 0, sv.height) );
+            sv.line(cy/2, PApplet.map(i, 0, sv.getAudioBuffer().size(), 0, sv.height), (cy/2) + (cy *(0.001f*feh)), PApplet.map(i, 0, sv.getAudioBuffer().size(), 0, sv.height) );
         }
 
         //Title

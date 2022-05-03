@@ -19,8 +19,10 @@ public class SineWave {
     }
 
     public void render(){
+        
 
         sv.colorMode(PApplet.HSB);
+        sv.strokeWeight(1);
         for(int i = 0 ; i < sv.getAudioBuffer().size() ; i ++)
         {
             lerpedBuffer[i] = PApplet.lerp(lerpedBuffer[i], sv.getAudioBuffer().get(i), 0.05f);
@@ -30,9 +32,7 @@ public class SineWave {
                 , 255
             );
             float feh = lerpedBuffer[i] * (y / 2) * 4.0f;
-
-            sv.ellipse(i+i*diameter, 3*(feh)*PApplet.sin(frequency*(feh))+y, diameter, diameter);
-
+            sv.ellipse((PApplet.map(i, 0, sv.getAudioBuffer().size(), 0, sv.width)), 3*(feh)*PApplet.sin(frequency*(feh))+y, diameter, diameter);
         }
     }
 }

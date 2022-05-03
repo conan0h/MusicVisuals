@@ -21,8 +21,17 @@ public class Star {
         this.colorChange = colorChange;
         x = this.sv.width / 2;
         y = this.sv.height / 2;
-        starx = sv.random(-5000, 5000);
-        stary = sv.random(-5000, 5000);
+        if (sv.timer.seconds() <= 289)
+        {
+            starx = sv.random(-5000, 5000);
+            stary = sv.random(-5000, 5000);
+        }
+        else
+        {
+            starx = sv.random(-sv.width, sv.width);
+            stary = sv.random(-sv.height, sv.height);
+        }
+        
         starz = sv.random(0, 2000);
 
         // red
