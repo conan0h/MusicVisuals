@@ -31,7 +31,7 @@ public class Finale {
         sv.stroke(255);
         sv.calculateAverageAmplitude();
 
-        dia = PApplet.lerp(dia, i, -0.0036f);
+        dia = PApplet.lerp(dia, i, -0.004f);
 
         sv.translate(x/2, y/2);
         sv.rotate(-angle);

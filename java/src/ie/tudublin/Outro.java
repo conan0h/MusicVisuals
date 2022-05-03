@@ -39,8 +39,7 @@ public class Outro {
             sv.colorMode(PConstants.RGB);
             sv.fill(255, 0, 0);
             sv.textAlign(PConstants.CENTER, PConstants.CENTER);
-            sv.text("THE", x/2, y/3);
-            sv.text("END", x/2, y - y/3);
+            sv.text("THANK YOU FOR WATCHING", x/2, y/3);
         }
     }
     

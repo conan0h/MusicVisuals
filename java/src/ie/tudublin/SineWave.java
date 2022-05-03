@@ -8,7 +8,7 @@ public class SineWave {
     float y = 0;
     float t = 0;
     float diameter  = 2;
-    float frequency = 990000000000000000000000000000000000.0f; // citation needed
+    float frequency = 3.0f;
     float[] lerpedBuffer;
 
     public SineWave(SongVisuals sv){
@@ -32,7 +32,7 @@ public class SineWave {
                 , 255
             );
             float feh = lerpedBuffer[i] * (y / 2) * 4.0f;
-            sv.ellipse((PApplet.map(i, 0, sv.getAudioBuffer().size(), 0, sv.width)), 3*(feh)*PApplet.sin(frequency*(feh))+y, diameter, diameter);
+            sv.ellipse((PApplet.map(i, 0, sv.getAudioBuffer().size(), 0, sv.width)), 2*(feh)*PApplet.sin(frequency*(feh))+y, diameter, diameter);
         }
     }
 }
