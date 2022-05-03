@@ -35,9 +35,9 @@ public class Outro {
 
        if (sv.timer.seconds() > 299)
         {
-            sv.textSize(96);
+            sv.textSize(48);
             sv.colorMode(PConstants.RGB);
-            sv.fill(255, 0, 0);
+            sv.fill(255);
             sv.textAlign(PConstants.CENTER, PConstants.CENTER);
             sv.text("THANK YOU FOR WATCHING", x/2, y/3);
         }
