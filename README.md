@@ -16,18 +16,12 @@ Name: Artyom McNiff
 
 Student Number: C20394301
 
-## Instructions
-- Fork this repository and use it a starter project for your assignment
-- Create a new package named your student number and put all your code in this package.
-- You should start by creating a subclass of ie.tudublin.Visual
-- There is an example visualiser called MyVisual in the example package
-- Check out the WaveForm and AudioBandsVisual for examples of how to call the Processing functions from other classes that are not subclasses of PApplet
-
 # Description of the assignment
-A combination of visuals which transition using an in-built timer. 
+Our groups Music Visualizer compiles a montage of different visuals all inspired by the song "Kids" by MGMT. The song was split into parts which transition using an in-built timer. 
 
 # Instructions
 Simply press the space bar and watch the show unfold.
+
 # How it works
 ## In order of appearance
 ## Timer
@@ -41,6 +35,9 @@ A combination of various visuals that serves as a title card for the video. The 
 At the top and bottom half are lines that expand until they hit the length of the screen. This effect is achieved by incrementing the x2 co-ordinate using a suitable variable.
 ## Mountains
 An infinite 3-D procedurally generated landscape which reacts to audio and is coloured according to the position of the y-axis. The landscape is generated using a grid of triangle strips, where some vertices are pulled up or down depending on the values generated, creating a mountainous effect.
+## Spiral
+A visualisation of a growing eye at it's center a spiraling circle with a small smiley. After which a robotic face appears. 
+I implemented dynamic responses to the music through ampiltude, changing variables scale, stroke weight and colour. 
 ## Space
 I created the public class space and then declared my variables with floats, height, width, t to help the vertex's to position better in the program and angles
 I then proceeded to create public space SongVisuals sv this.sv = sv; to connect the main song visual java file to mine.
@@ -220,71 +217,10 @@ creating these visuals with good communication that is one of the two things tha
 ### David
 What I am most proud of in this assignment was the Box-Sphere visual I made. Though it was relatively simple in terms of actual code after putting the amount of time I did into making it I was very pleased with how it turned out looking while the song was playing. This was even more satisfying in the end compilation when paired with the Box wave visual that brought a more completed look to the visual.
 
-# Markdown Tutorial
+### Conan
+Creating the spiraling effect took a lot of logical thinking and experimentation. During which I accidently constructed a horizontal eclipse, similar somewhat to an eye. I thought it looked amazing and knew it would make a greater outside border for my inner circle. The end result created an almost surreal visual I'm very fond of.
 
-This is *emphasis*
-
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
-
-```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-So is this without specifying the language:
-
-```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-This is an image using a relative URL:
-
-![An image](images/p8.png)
-
-This is an image using an absolute URL:
-
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
-
-This is a youtube video:
+# Our youtube video:
 
 [![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
 
