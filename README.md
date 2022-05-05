@@ -29,27 +29,28 @@ A combination of visuals which transition using an in-built timer.
 # Instructions
 Simply press the space bar and watch the show unfold.
 # How it works
-## In order of appearance
-## Timer
+## Artyom
+### In order of appearance
+### Timer
 A timing system used throughout the program that dictates which visuals play at which time. Depending on the time set, it also influences the visual’s behaviour. 
-## WaveForm
+### WaveForm
 Taking advantage of the black background, the waveform blends in and out of view, with its size being influenced by the incoming audio, particularly its height.
-## SineWave
+### SineWave
 A waveform comprised of multiple ellipses in a line. The size of the wave is influenced by the audio, forcing it into a sine wave pattern.
-## Intro
+### Intro
 A combination of various visuals that serves as a title card for the video. The logo in the middle is a piano drawn using the line function.  The name of the song is displayed below the piano. Flanking both sides of the song title are vertical waveforms which span the length of the screen.
 At the top and bottom half are lines that expand until they hit the length of the screen. This effect is achieved by incrementing the x2 co-ordinate using a suitable variable.
-## Mountains
+### Mountains
 An infinite 3-D procedurally generated landscape which reacts to audio and is coloured according to the position of the y-axis. The landscape is generated using a grid of triangle strips, where some vertices are pulled up or down depending on the values generated, creating a mountainous effect.
-## Star
+### Star
 Generates an array of stars which give the illusion of movement by growing in size as they approach the edges of the screen. An array of colours is used to colour each star differently.
-## Finale
+### Finale
 Creates a rotating circle which has a circle pattern in its centre using trigonometry to make multiple symmetrical lines. The diameter of the circle is influenced by the audio, growing, and shrinking in size according to the audio level. The scale of the circle is gradually increased until the centre is roughly the same size as the circle in the Space visual to facilitate a smoother transition. 
-## Outro
+### Outro
 Ending portion of the video, combines the WaveIntro and SineWave visuals, along with two lines at the top and bottom which change colour as they fade in length. Contains a message thanking the viewer for their patience. 
 
 # What I am most proud of in the assignment
-### Artyom
+## Artyom
 While it required some effort to create the individual visuals, what I was most satisfied with was combining the team’s various efforts into one cohesive music video. Managing the visual transitions based on what part of the music was playing took careful planning. The result was a medley of visuals which I think fit the image and tone of the song well. I’m happy with how the project turned out.
 
 # Markdown Tutorial
