@@ -84,5 +84,5 @@ Creating the spiraling effect took a lot of logical thinking and experimentation
 
 # Our youtube video:
 
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
+https://www.youtube.com/watch?v=ZlPkGflFRn0
 
