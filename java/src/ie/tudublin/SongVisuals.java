@@ -1,4 +1,8 @@
 package ie.tudublin;
+import C20391861.*;
+import C20758051.*;
+import C20394301.*;
+import C20730175.*;
 
 
 /*
@@ -10,7 +14,7 @@ Call the render function in the draw funciton
 */
 public class SongVisuals extends Visual 
 {    
-    Timer timer;
+    public Timer timer;
     WaveIntro wi;
     Intro in;
     Mountains mt;
